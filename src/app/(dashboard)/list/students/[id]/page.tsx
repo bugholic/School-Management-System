@@ -19,7 +19,7 @@ const SingleStudentsPage = () => {
                 alt=""
                 width={144}
                 height={144}
-                className="w-36 h-36 rounded-full object-cover"
+                className="max-w-36 max-h-36 rounded-full object-cover"
               />
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
@@ -119,7 +119,7 @@ const SingleStudentsPage = () => {
         <h1 className="text-xl font-semibold">Shortcuts</h1>
         <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
           <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">Student&apos;s Lessons</Link>
-          <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">Student&apos;s Teachers</Link>
+          <Link className="p-3 rounded-md bg-lamaPurpleLight" href={`/list/teachers?classId=${2}`}>Student&apos;s Teachers</Link>
           <Link className="p-3 rounded-md bg-pink-50" href="/">Student&apos;s Exams</Link>
           <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">Student&apos;s Assignments</Link>
           <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">Student&apos;s Results</Link>
