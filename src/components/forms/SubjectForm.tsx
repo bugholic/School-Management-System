@@ -52,9 +52,9 @@ const SubjectForm = ({
       router.refresh();
       setOpen(false);
     }
-  }, [state, formAction]);
+  }, [state]);
 
-  // const { teachers } = relatedData;
+  const { teachers } = relatedData || {};
 
   return (
     <form action="" className="flex flex-col gap-8" onSubmit={onSubmit}>
@@ -87,13 +87,13 @@ const SubjectForm = ({
             {...register("teachers")}
             defaultValue={data?.teachers}
           >
-            {/* {teachers.map(
+            {teachers?.map(
               (teacher: { id: string; name: string; surname: string }) => (
                 <option value={teacher.id} key={teacher.id}>
                   {teacher.name + " " + teacher.surname}
                 </option>
               )
-            )} */}
+            )}
           </select>
           {errors.teachers?.message && (
             <p className="text-xs text-red-400">

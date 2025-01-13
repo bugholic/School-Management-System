@@ -19,20 +19,20 @@ export type FormContainerProps = {
   data?: any;
   id?: number | string;
 };
-
 const FormContainer = async ({ table, type, data, id }: FormContainerProps) => {
-  let relatedData = {};
+  let relatedData;
 
   if (type !== "delete") {
     switch (table) {
       case "subject":
-        const subjectTeachers = await prisma.teacher.findMany({
+        const subTeachers = await prisma.teacher.findMany({
           select: { id: true, name: true, surname: true },
         });
 
-        relatedData = { teachers: subjectTeachers };
+        console.log(subTeachers);
+        relatedData = { teachers: subTeachers };
+        console.error(`Unhandled table type: ${table}`);
         break;
-
       case "class":
         const classGrades = await prisma.grade.findMany({
           select: { id: true, level: true },
